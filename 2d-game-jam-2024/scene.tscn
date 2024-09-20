@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvypuuq4xfckn"]
+
+[ext_resource type="PackedScene" uid="uid://bbvybelpdjuy0" path="res://player.tscn" id="1_3qp02"]
+[ext_resource type="PackedScene" uid="uid://c8eqnut61xxt8" path="res://planet.tscn" id="2_rahdy"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_3qp02")]
+position = Vector2(569, 531)
+scale = Vector2(0.520001, 0.520001)
+
+[node name="Planet" parent="." instance=ExtResource("2_rahdy")]
+scale = Vector2(0.996818, 1.00336)
