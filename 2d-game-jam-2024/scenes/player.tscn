@@ -14,3 +14,13 @@ texture = ExtResource("1_ujg53")
 position = Vector2(-0.002, 0)
 scale = Vector2(0.045, 0.045)
 polygon = PackedVector2Array(0, -58, 6, -52, 17, -33, 19, -27, 19, 41, 25, 52, 17, 58, -17, 58, -26, 53, -19, 42, -19, -28, -14, -42, -7, -52)
+
+[node name="PlayerHitbox" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlayerHitbox"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-0.002, 0)
+scale = Vector2(0.051, 0.051)
+polygon = PackedVector2Array(0, -52.545, 6, -47.59, 17, -28.42, 18.005, -21.925, 18.15, 35.22, 24.02, 45.48, 17, 50.97, -17, 51.58, -23.91, 46.81, -18.195, 36.31, -18.34, -23.2, -14, -36.1, -7, -48.105)
+
+[connection signal="body_entered" from="PlayerHitbox" to="." method="_on_hitbox_body_entered"]

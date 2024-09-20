@@ -1,28 +1,28 @@
 [gd_scene load_steps=4 format=3 uid="uid://c8eqnut61xxt8"]
 
-[ext_resource type="Texture2D" uid="uid://baq4pt6b606qe" path="res://bitmap.svg" id="1_6v7vi"]
+[ext_resource type="Texture2D" uid="uid://ca5dd4du2wy5g" path="res://sprites/earth4.png" id="1_pcwpw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tymmp"]
-radius = 1.27979
+radius = 5.58358
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u16ev"]
 
 [node name="Planet" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.864, 0.864)
+texture = ExtResource("1_pcwpw")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-scale = Vector2(0.082, 0.082)
-texture = ExtResource("1_6v7vi")
+[node name="PlanetHitbox" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetHitbox"]
 scale = Vector2(32.5, 32.5)
 shape = SubResource("CircleShape2D_tymmp")
 
 [node name="Area2D" type="Area2D" parent="."]
 gravity_space_override = 1
 gravity_point = true
-gravity_point_unit_distance = 325.0
+gravity_point_unit_distance = 50.0
 gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)
 gravity = 50.0

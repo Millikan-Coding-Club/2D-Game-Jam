@@ -1,13 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvypuuq4xfckn"]
+[gd_scene load_steps=6 format=3 uid="uid://bvypuuq4xfckn"]
 
 [ext_resource type="PackedScene" uid="uid://bbvybelpdjuy0" path="res://scenes/player.tscn" id="1_u7n24"]
 [ext_resource type="PackedScene" uid="uid://c8eqnut61xxt8" path="res://scenes/planet.tscn" id="2_w77pm"]
+[ext_resource type="FontFile" uid="uid://c1b2i7caywvgb" path="res://PixelOperator8-Bold.ttf" id="3_o5s6p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xv0r0"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_7nod0"]
+font = ExtResource("3_o5s6p")
+font_size = 13
 
 [node name="game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_u7n24")]
 position = Vector2(399, 455)
-initial_thrust = 12000
 
 [node name="Planet" parent="." instance=ExtResource("2_w77pm")]
 position = Vector2(241, 250)
@@ -23,3 +30,38 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="crashed" type="Label" parent="UI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.5
+offset_top = -11.5
+offset_right = 55.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU CRASHED"
+label_settings = SubResource("LabelSettings_xv0r0")
+
+[node name="leftstats" type="Label" parent="UI"]
+offset_right = 465.0
+offset_bottom = 433.0
+text = "Velocity: 123 mi/s
+Angle: 0°
+Apoapsis: 500mi
+Periapsis:50mi"
+label_settings = SubResource("LabelSettings_7nod0")
+
+[node name="rightstats" type="Label" parent="UI"]
+offset_right = 500.0
+offset_bottom = 433.0
+text = "planet mass: big
+planet gravity: yes"
+label_settings = SubResource("LabelSettings_7nod0")
+horizontal_alignment = 2
