@@ -42,7 +42,7 @@ polygon = PackedVector2Array(0, -52.545, 6, -47.59, 17, -28.42, 18.005, -21.925,
 show_behind_parent = true
 top_level = true
 z_index = -1
-width = 2.0
+width = 1.5
 width_curve = SubResource("Curve_rdxqt")
 default_color = Color(0, 1, 1, 1)
 
@@ -50,7 +50,7 @@ default_color = Color(0, 1, 1, 1)
 show_behind_parent = true
 top_level = true
 z_index = -1
-width = 1.5
+width = 0.0
 width_curve = SubResource("Curve_tipfp")
 joint_mode = 2
 begin_cap_mode = 2

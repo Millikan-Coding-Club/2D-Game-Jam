@@ -99,6 +99,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Restart"
 
+[connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="game_over" from="Player" to="." method="_on_player_game_over"]
 [connection signal="pressed" from="UI/RestartButton" to="." method="_on_restart_button_pressed"]
 

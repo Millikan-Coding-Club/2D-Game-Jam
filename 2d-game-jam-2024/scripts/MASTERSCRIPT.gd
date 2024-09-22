@@ -34,7 +34,8 @@ func get_gravity_at_point(area: Area2D, point: Vector2) -> Vector2:
 	var force_magnitude = gravity_strength / pow(distance, 2)
 	
 	return direction * force_magnitude
-	
+
+
 func update_trajectory(delta):
 	trajectory.clear_points()
 	var pos = player.global_position
@@ -52,6 +53,16 @@ func update_trajectory(delta):
 		pos += vel * delta #TODO: fix trajectory calculation
 		if pos.distance_to(planet.global_position) < 14: #TODO: calculate planet radius
 			break
+		if i % 5 == 0: #draws circle at every multiple of 5
+			circle_locations.append(pos)
+	queue_redraw()
+
+var circle_locations: PackedVector2Array
+func _draw():
+	var size = .4 / $Camera2D.zoom.x
+	for i in circle_locations:
+		draw_circle(i, size, Color(1, 1, 1))
+	circle_locations.clear()
 
 #restart key
 func _input(event):

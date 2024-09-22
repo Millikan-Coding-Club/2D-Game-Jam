@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 @onready var trail: Line2D = $Trail
+@onready var sprite = $Sprite2D
 
 @export var max_points_trail = 10
 @export var initial_thrust := 50
@@ -24,7 +25,9 @@ func _process(delta: float) -> void:
 	trail.add_point(position)
 	if trail.get_point_count() > max_points_trail:
 		trail.remove_point(0)
-	
+
+	sprite.look_at(linear_velocity + position)
+	sprite.rotate(PI/2)
 
 func _integrate_forces(state):
 	var rotation_direction = 0
@@ -37,7 +40,7 @@ func _integrate_forces(state):
 		rotation_direction -= 1
 	state.apply_torque(rotation_direction * torque)
 
-# spawns player at edge randomly and aims them at the planet based on the offset
+# spawns player in a circle and randomly and aims them at the planet based on the offset
 func spawn_in():
 	trail.clear_points()
 	linear_velocity = Vector2(0,0)
@@ -47,24 +50,6 @@ func spawn_in():
 	look_at(CENTER) # Point towards center
 	rotate(PI/2 + randf_range(-angle_variance, angle_variance)) # Fix offset and vary angle by +- angle_variance
 	apply_impulse(-transform.y * initial_thrust)
-	
-	#var randnum = randf_range(250-offset, 250+offset)
-	#var side = randi() % 4
-	#match side:
-		#0: #top spawn
-			#position = Vector2(randf_range(0 , 500), 0)
-			#apply_force(Vector2(-(position.x-randnum), 250)*initial_thrust)
-		#1: #right spawn
-			#position = Vector2(500, randf_range(0 , 500))
-			#apply_force(Vector2(-250, -(position.y-randnum))*initial_thrust)
-		#2: #bottom spawn
-			#position = Vector2(randf_range(0 , 500), 500)
-			#apply_force(Vector2(-(position.x-randnum), -250)*initial_thrust)
-		#3: #left spawn
-			#position = Vector2(0, randf_range(0 , 500))
-			#apply_force(Vector2(250, -(position.y-randnum))*initial_thrust)
-	#look_at(Vector2(250, 250))
-	#rotate(PI/2)
 
 
 #freezes the player when they crash, kinda buggy
