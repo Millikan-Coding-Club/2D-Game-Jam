@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvypuuq4xfckn"]
+[gd_scene load_steps=7 format=3 uid="uid://bvypuuq4xfckn"]
 
 [ext_resource type="Script" path="res://scripts/MASTERSCRIPT.gd" id="1_84trf"]
 [ext_resource type="PackedScene" uid="uid://c8eqnut61xxt8" path="res://scenes/planet.tscn" id="2_w77pm"]
 [ext_resource type="Script" path="res://scripts/background.gd" id="3_0g06m"]
-[ext_resource type="Script" path="res://scripts/ui.gd" id="3_2e2mb"]
 [ext_resource type="FontFile" uid="uid://c1b2i7caywvgb" path="res://PixelOperator8-Bold.ttf" id="3_o5s6p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xv0r0"]
@@ -24,7 +23,7 @@ position = Vector2(250, 250)
 
 [node name="Planet" parent="." instance=ExtResource("2_w77pm")]
 position = Vector2(250, 250)
-scale = Vector2(0.0721311, 0.0726045)
+scale = Vector2(0.1, 0.1)
 
 [node name="background" type="CanvasLayer" parent="."]
 layer = -5
@@ -40,7 +39,6 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource("3_2e2mb")
 
 [node name="crashed" type="Label" parent="UI"]
 visible = false

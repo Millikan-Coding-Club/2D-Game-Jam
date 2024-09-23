@@ -6,6 +6,8 @@ var trajectory: Line2D
 @export var max_points_trajectory: int = 300
 @export var trajectory_dot_interval: int = 10
 @export var trajectory_dot_size: float = 1
+@export var start_zoom := 1.0
+@onready var camera = $Camera2D
 
 var periapsis
 var passed_periapsis := false
@@ -14,6 +16,11 @@ var speed
 
 func _ready() -> void:
 	create_player()
+	if player.gameplay2 == true:
+		trajectory_dot_size = .5
+		start_zoom = .2
+		trajectory_dot_interval = 5
+	camera.zoom = Vector2(start_zoom, start_zoom)
 
 func restart():
 	player.queue_free()
@@ -22,7 +29,7 @@ func restart():
 	$background.generate_stars()
 	$UI/crashed.hide()
 	$UI/RestartButton.hide()
-	$Camera2D.zoom = Vector2(1,1)
+	camera.zoom = Vector2(start_zoom,start_zoom)
 
 
 func _on_restart_button_pressed():
@@ -70,7 +77,7 @@ func update_trajectory(delta):
 			gravity *= 0.5
 		vel += gravity / (player.mass * delta)
 		pos += vel * delta #TODO: fix trajectory calculation
-		if pos.distance_to(planet.global_position) < 14: #TODO: calculate planet radius
+		if pos.distance_to(planet.global_position) < 200*planet.scale.x: #DONE: calculated planet radius
 			break
 		var interval: int = trajectory_dot_interval / $Camera2D.zoom.x
 		if i % interval == 0: #draws circle at every multiple of interval
@@ -79,14 +86,21 @@ func update_trajectory(delta):
 	
 func update_camera():
 	var player_dist = player.global_position.distance_to(planet.global_position)
+	if player.gameplay2 == true:
+		if player_dist < 800:
+			$Camera2D.zoom = Vector2(0.3, 0.3)
+		if player_dist < 500:
+			$Camera2D.zoom = Vector2(0.5, 0.5)
+		if player_dist < 300:
+			$Camera2D.zoom = Vector2(0.8, 0.8)
 	if player_dist < 200:
 		$Camera2D.zoom = Vector2(1.3, 1.3)
-	if player_dist < 160:
-		$Camera2D.zoom = Vector2(1.6, 1.6)
 	if player_dist < 120:
 		$Camera2D.zoom = Vector2(2, 2)
-	if player_dist < 80:
-		$Camera2D.zoom = Vector2(3, 3)
+	if player_dist < 60:
+		$Camera2D.zoom = Vector2(5, 5)
+	if player_dist < 10:
+		$Camera2D.zoom = Vector2(15, 15)
 
 var circle_locations: PackedVector2Array
 func _draw():
@@ -129,8 +143,10 @@ func game_over():
 	$UI/crashed.show()
 	$UI/RestartButton.show()
 	$UI/leftstats.text = text % ["0", "0", "0"]
+	player.explosion()
 
 
 func _on_player_exited() -> void:
-	new_vel = speed
-	restart()
+	if player.dying == false:
+		new_vel = speed
+		restart()
