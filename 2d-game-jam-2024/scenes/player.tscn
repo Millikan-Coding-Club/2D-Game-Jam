@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_gba11"]
 [ext_resource type="Texture2D" uid="uid://dgkc6tis1axby" path="res://sprites/ship.png" id="1_ujg53"]
-[ext_resource type="Texture2D" uid="uid://bqan1pk6wt1xh" path="res://sprites/pinky.png" id="4_rtc43"]
+[ext_resource type="Texture2D" uid="uid://bqan1pk6wt1xh" path="res://sprites/planets/pinky.png" id="4_rtc43"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gi4ek"]
 friction = 0.0

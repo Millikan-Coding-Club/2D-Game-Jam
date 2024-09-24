@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpus0ldv7e260"
-path="res://.godot/imported/sigma.png-101644fbab5f0243f53339790207c62a.ctex"
+uid="uid://cbgo4taom0nk1"
+path="res://.godot/imported/ice planet2.png-d95e8528f43b0a6568f8f0dde6d32d57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/sigma.png"
-dest_files=["res://.godot/imported/sigma.png-101644fbab5f0243f53339790207c62a.ctex"]
+source_file="res://sprites/planets/ice planet2.png"
+dest_files=["res://.godot/imported/ice planet2.png-d95e8528f43b0a6568f8f0dde6d32d57.ctex"]
 
 [params]
 

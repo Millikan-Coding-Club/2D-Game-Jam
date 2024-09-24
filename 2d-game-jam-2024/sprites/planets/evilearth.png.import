@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxavnvug8h0xk"
-path="res://.godot/imported/thanos.png-790aa9c470f4190803a92221fd724ac4.ctex"
+uid="uid://drorpf2wah2aj"
+path="res://.godot/imported/evilearth.png-e34c836017af71424319d7b52864d9e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/thanos.png"
-dest_files=["res://.godot/imported/thanos.png-790aa9c470f4190803a92221fd724ac4.ctex"]
+source_file="res://sprites/planets/evilearth.png"
+dest_files=["res://.godot/imported/evilearth.png-e34c836017af71424319d7b52864d9e0.ctex"]
 
 [params]
 

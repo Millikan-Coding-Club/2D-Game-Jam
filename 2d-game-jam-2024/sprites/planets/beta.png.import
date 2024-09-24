@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drorpf2wah2aj"
-path="res://.godot/imported/evilearth.png-0293fa3fd4830e8c02bec28ee642429f.ctex"
+uid="uid://dcl66usflbpa2"
+path="res://.godot/imported/beta.png-79c7282777bbb015e85877802a26cab0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/evilearth.png"
-dest_files=["res://.godot/imported/evilearth.png-0293fa3fd4830e8c02bec28ee642429f.ctex"]
+source_file="res://sprites/planets/beta.png"
+dest_files=["res://.godot/imported/beta.png-79c7282777bbb015e85877802a26cab0.ctex"]
 
 [params]
 

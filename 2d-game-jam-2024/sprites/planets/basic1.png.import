@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqan1pk6wt1xh"
-path="res://.godot/imported/pinky.png-7729c3ceb4eb291ccb26e0dc1e55b378.ctex"
+uid="uid://bkbjok5lmpb3s"
+path="res://.godot/imported/basic1.png-677e67535d2ac520e685c0dc8abdac44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/pinky.png"
-dest_files=["res://.godot/imported/pinky.png-7729c3ceb4eb291ccb26e0dc1e55b378.ctex"]
+source_file="res://sprites/planets/basic1.png"
+dest_files=["res://.godot/imported/basic1.png-677e67535d2ac520e685c0dc8abdac44.ctex"]
 
 [params]
 

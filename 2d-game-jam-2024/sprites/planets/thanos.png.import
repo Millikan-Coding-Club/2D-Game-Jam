@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcl66usflbpa2"
-path="res://.godot/imported/beta.png-06bc288bbdde669c4437dde6f712beed.ctex"
+uid="uid://bxavnvug8h0xk"
+path="res://.godot/imported/thanos.png-c8961073a6b8b6e9c1661a106bf23f2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/beta.png"
-dest_files=["res://.godot/imported/beta.png-06bc288bbdde669c4437dde6f712beed.ctex"]
+source_file="res://sprites/planets/thanos.png"
+dest_files=["res://.godot/imported/thanos.png-c8961073a6b8b6e9c1661a106bf23f2a.ctex"]
 
 [params]
 

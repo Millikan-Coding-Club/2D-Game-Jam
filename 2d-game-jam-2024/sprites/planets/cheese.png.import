@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdux783sdsym0"
-path="res://.godot/imported/cheese.png-e80d18737d1d16cb3a61fc4d9db7bc1d.ctex"
+path="res://.godot/imported/cheese.png-4471fd0198340e0d38a9952ba9e44e7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/cheese.png"
-dest_files=["res://.godot/imported/cheese.png-e80d18737d1d16cb3a61fc4d9db7bc1d.ctex"]
+source_file="res://sprites/planets/cheese.png"
+dest_files=["res://.godot/imported/cheese.png-4471fd0198340e0d38a9952ba9e44e7b.ctex"]
 
 [params]
 

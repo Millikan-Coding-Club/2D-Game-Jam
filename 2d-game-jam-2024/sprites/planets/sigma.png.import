@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1we8hplevbd5"
-path="res://.godot/imported/steve2.png-27963dd821bebcf4d43d8064b6a52dc3.ctex"
+uid="uid://dpus0ldv7e260"
+path="res://.godot/imported/sigma.png-64769cb3081ff2bf7d2447f3a4fd2313.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/steve2.png"
-dest_files=["res://.godot/imported/steve2.png-27963dd821bebcf4d43d8064b6a52dc3.ctex"]
+source_file="res://sprites/planets/sigma.png"
+dest_files=["res://.godot/imported/sigma.png-64769cb3081ff2bf7d2447f3a4fd2313.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br21ar4rofgav"
-path="res://.godot/imported/dot.png-7e79b3630da1f23ca89e1d772c90c722.ctex"
+uid="uid://b1we8hplevbd5"
+path="res://.godot/imported/steve2.png-ba59bb5ed93bf3ded2d015fd4cbdf9c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/dot.png"
-dest_files=["res://.godot/imported/dot.png-7e79b3630da1f23ca89e1d772c90c722.ctex"]
+source_file="res://sprites/planets/steve2.png"
+dest_files=["res://.godot/imported/steve2.png-ba59bb5ed93bf3ded2d015fd4cbdf9c2.ctex"]
 
 [params]
 

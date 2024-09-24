@@ -9,7 +9,7 @@ var trajectory: Line2D
 @export var trajectory_dot_size: float = 1
 @export var start_zoom := 1.0
 @export var min_planet_spin: float = 1
-@export var max_planet_spin: float = 10
+@export var max_planet_spin: float = 5
 @export var planet_sprites: Array[CompressedTexture2D] = []
 @onready var camera = $Camera2D
 
@@ -43,7 +43,8 @@ func restart():
 	
 # WIP
 func generate_planet():
-	$Planet/Sprite2D.texture = planet_sprites.pick_random() 
+	$Planet/Sprite2D.texture = planet_sprites.pick_random()
+	
 	planet_spin = randf_range(min_planet_spin, max_planet_spin)
 	if randf() > 0.5:
 		planet_spin *= -1
