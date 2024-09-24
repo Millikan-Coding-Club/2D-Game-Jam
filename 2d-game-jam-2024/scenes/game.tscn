@@ -1,0 +1,271 @@
+[gd_scene load_steps=40 format=3 uid="uid://bvypuuq4xfckn"]
+
+[ext_resource type="Script" path="res://scripts/MASTERSCRIPT.gd" id="1_84trf"]
+[ext_resource type="Texture2D" uid="uid://dcl66usflbpa2" path="res://sprites/planets/beta.png" id="2_7c22e"]
+[ext_resource type="PackedScene" uid="uid://c8eqnut61xxt8" path="res://scenes/planet.tscn" id="2_w77pm"]
+[ext_resource type="Script" path="res://scripts/background.gd" id="3_0g06m"]
+[ext_resource type="FontFile" uid="uid://c1b2i7caywvgb" path="res://PixelOperator8-Bold.ttf" id="3_o5s6p"]
+[ext_resource type="Texture2D" uid="uid://prgfspes0tu4" path="res://sprites/planets/mound.png" id="4_w15j0"]
+[ext_resource type="Texture2D" uid="uid://bqan1pk6wt1xh" path="res://sprites/planets/pinky.png" id="5_e0hns"]
+[ext_resource type="Texture2D" uid="uid://dpus0ldv7e260" path="res://sprites/planets/sigma.png" id="6_jmm06"]
+[ext_resource type="Texture2D" uid="uid://b1we8hplevbd5" path="res://sprites/planets/steve2.png" id="7_0vxxk"]
+[ext_resource type="Texture2D" uid="uid://c3ev3xce45s3b" path="res://sprites/planets/steve.png" id="8_6y7ii"]
+[ext_resource type="Texture2D" uid="uid://bxavnvug8h0xk" path="res://sprites/planets/thanos.png" id="9_ay7tp"]
+[ext_resource type="Texture2D" uid="uid://cdux783sdsym0" path="res://sprites/planets/cheese.png" id="9_jvyl8"]
+[ext_resource type="Texture2D" uid="uid://drorpf2wah2aj" path="res://sprites/planets/evilearth.png" id="10_leani"]
+[ext_resource type="Texture2D" uid="uid://dl02ubthqegvq" path="res://sprites/planets/ice planet.png" id="11_fsgll"]
+[ext_resource type="Texture2D" uid="uid://ra37ap6mdgoy" path="res://sprites/planets/oceanplanet.png" id="12_f1fnx"]
+[ext_resource type="Texture2D" uid="uid://da2eabypwe6c7" path="res://sprites/explosion.png" id="12_nq0hm"]
+[ext_resource type="Texture2D" uid="uid://c34q7yxcns6tm" path="res://sprites/planets/graveyard.png" id="13_1ilou"]
+[ext_resource type="Texture2D" uid="uid://cbgo4taom0nk1" path="res://sprites/planets/ice planet2.png" id="14_5sys7"]
+[ext_resource type="Texture2D" uid="uid://bkbjok5lmpb3s" path="res://sprites/planets/basic1.png" id="15_xg5p4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vaotb"]
+atlas = ExtResource("12_nq0hm")
+region = Rect2(0, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rqsp"]
+atlas = ExtResource("12_nq0hm")
+region = Rect2(151, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b70n"]
+atlas = ExtResource("12_nq0hm")
+region = Rect2(302, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mmnn"]
+atlas = ExtResource("12_nq0hm")
+region = Rect2(453, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_co4fg"]
+atlas = ExtResource("12_nq0hm")
+region = Rect2(604, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yscrp"]
+atlas = ExtResource("12_nq0hm")
+region = Rect2(755, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imde0"]
+atlas = ExtResource("12_nq0hm")
+region = Rect2(906, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hagmw"]
+atlas = ExtResource("12_nq0hm")
+region = Rect2(1057, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhq6g"]
+atlas = ExtResource("12_nq0hm")
+region = Rect2(1208, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6aa45"]
+atlas = ExtResource("12_nq0hm")
+region = Rect2(1359, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jv5q1"]
+atlas = ExtResource("12_nq0hm")
+region = Rect2(1510, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pq4e"]
+atlas = ExtResource("12_nq0hm")
+region = Rect2(1661, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpmte"]
+atlas = ExtResource("12_nq0hm")
+region = Rect2(1812, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl8tp"]
+atlas = ExtResource("12_nq0hm")
+region = Rect2(1963, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3iyy"]
+atlas = ExtResource("12_nq0hm")
+region = Rect2(2114, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1d50e"]
+atlas = ExtResource("12_nq0hm")
+region = Rect2(2265, 0, 151, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5pi4"]
+atlas = ExtResource("12_nq0hm")
+region = Rect2(2416, 0, 151, 151)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mhxdb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vaotb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rqsp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b70n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mmnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_co4fg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yscrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imde0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hagmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhq6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6aa45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jv5q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jv5q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pq4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pq4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpmte")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpmte")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl8tp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl8tp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3iyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3iyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1d50e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1d50e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5pi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5pi4")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 7.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xv0r0"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_7nod0"]
+font = ExtResource("3_o5s6p")
+font_size = 13
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_84trf")
+max_points_trajectory = 1000
+trajectory_dot_interval = 30
+trajectory_dot_size = 1.2
+min_planet_spin = 0.1
+max_planet_spin = 0.8
+cool_planet_chance = 0.4
+planet_sprites = Array[CompressedTexture2D]([ExtResource("2_7c22e"), ExtResource("4_w15j0"), ExtResource("5_e0hns"), ExtResource("6_jmm06"), ExtResource("7_0vxxk"), ExtResource("8_6y7ii"), ExtResource("9_ay7tp"), ExtResource("9_jvyl8"), ExtResource("10_leani"), ExtResource("11_fsgll"), ExtResource("12_f1fnx"), ExtResource("13_1ilou"), ExtResource("14_5sys7")])
+basic_planet_sprites = Array[CompressedTexture2D]([ExtResource("15_xg5p4")])
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(250, 250)
+
+[node name="Planet" parent="." instance=ExtResource("2_w77pm")]
+position = Vector2(250, 250)
+scale = Vector2(0.1, 0.1)
+
+[node name="Explosion" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(0.0695364, 0.0695364)
+sprite_frames = SubResource("SpriteFrames_mhxdb")
+animation = &"explosion"
+
+[node name="background" type="CanvasLayer" parent="."]
+layer = -5
+script = ExtResource("3_0g06m")
+
+[node name="ColorRect" type="ColorRect" parent="background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="crashed" type="Label" parent="UI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.5
+offset_top = -11.5
+offset_right = 55.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU CRASHED"
+label_settings = SubResource("LabelSettings_xv0r0")
+
+[node name="leftstats" type="Label" parent="UI"]
+offset_right = 465.0
+offset_bottom = 433.0
+text = "Velocity: 123 mi/s
+Angle: 0°
+Apoapsis: 500mi
+Periapsis:50mi"
+label_settings = SubResource("LabelSettings_7nod0")
+metadata/_edit_use_anchors_ = true
+
+[node name="rightstats" type="Label" parent="UI"]
+visible = false
+offset_right = 500.0
+offset_bottom = 433.0
+text = "planet mass: big
+planet gravity: yes"
+label_settings = SubResource("LabelSettings_7nod0")
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="RestartButton" type="Button" parent="UI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = 72.0
+offset_right = 59.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart"
+
+[connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="pressed" from="UI/RestartButton" to="." method="_on_restart_button_pressed"]
+
+[editable path="Planet"]
