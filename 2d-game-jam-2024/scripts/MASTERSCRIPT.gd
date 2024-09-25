@@ -129,7 +129,7 @@ func update_trajectory(delta):
 		gravity = get_gravity_at_point(planet.get_node("Area2D"), pos) * 8
 		if pos.distance_to(planet.global_position) > trajectory_periapsis:
 			gravity *= 0.5
-		vel += gravity / (player.mass * delta)
+		vel += gravity / (player.mass * delta * 1/5) #i dont know why this fixes it but who cares
 		pos += vel * delta # Trajectory is good enough if it doesn't cause more problems
 		if pos.distance_to(planet.global_position) < surface:
 			break
