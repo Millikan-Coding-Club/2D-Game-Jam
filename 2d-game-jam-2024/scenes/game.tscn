@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://bvypuuq4xfckn"]
+[gd_scene load_steps=67 format=3 uid="uid://bvypuuq4xfckn"]
 
 [ext_resource type="Script" path="res://scripts/MASTERSCRIPT.gd" id="1_84trf"]
 [ext_resource type="Texture2D" uid="uid://dcl66usflbpa2" path="res://sprites/planets/beta.png" id="2_7c22e"]
@@ -30,10 +30,12 @@
 [ext_resource type="Texture2D" uid="uid://m6b48gtnr16f" path="res://sprites/planets/basic2.png" id="17_cwv7j"]
 [ext_resource type="Texture2D" uid="uid://bxxfxips3hx7y" path="res://sprites/planets/basic3.png" id="18_smwf5"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="26_31o22"]
-[ext_resource type="Texture2D" uid="uid://cubl3hn4llmhh" path="res://sprites/title.png" id="26_68h3k"]
+[ext_resource type="Texture2D" uid="uid://cubl3hn4llmhh" path="res://sprites/ui/title.png" id="26_68h3k"]
 [ext_resource type="Theme" uid="uid://bdop6xmbct6kq" path="res://themes/button.tres" id="27_0uk8k"]
-[ext_resource type="Texture2D" uid="uid://bcr4flgsorl6w" path="res://sprites/menu-background.png" id="27_4oi7w"]
+[ext_resource type="Texture2D" uid="uid://bcr4flgsorl6w" path="res://sprites/ui/menu-background.png" id="27_4oi7w"]
 [ext_resource type="Texture2D" uid="uid://dgkc6tis1axby" path="res://sprites/ship.png" id="30_ccily"]
+[ext_resource type="Texture2D" uid="uid://xi5bjeqxucnr" path="res://sprites/ui/settings.png" id="35_t6kv5"]
+[ext_resource type="Theme" uid="uid://n4qhugdvhh4g" path="res://themes/barthing.tres" id="36_lrekp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vaotb"]
 atlas = ExtResource("12_nq0hm")
@@ -184,11 +186,9 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xv0r0"]
-font_size = 30
-
-[sub_resource type="LabelSettings" id="LabelSettings_7nod0"]
 font = ExtResource("3_o5s6p")
-font_size = 13
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_gt140"]
 length = 0.001
@@ -215,6 +215,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(45, -37)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Settings:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1e-05)]
 }
 
 [sub_resource type="Animation" id="Animation_6hrer"]
@@ -259,6 +271,83 @@ _data = {
 "orbit": SubResource("Animation_si8f8")
 }
 
+[sub_resource type="Animation" id="Animation_a78fu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Settings:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Credits:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_krss1"]
+resource_name = "credits"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Credits:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(7.45058e-09, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ryy12"]
+resource_name = "settings"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Settings:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.49012e-08, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oddsr"]
+_data = {
+"RESET": SubResource("Animation_a78fu"),
+"credits": SubResource("Animation_krss1"),
+"settings": SubResource("Animation_ryy12")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imqpb"]
+bg_color = Color(1, 1, 1, 1)
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hskdb"]
+font = ExtResource("3_o5s6p")
+
+[sub_resource type="LabelSettings" id="LabelSettings_3di6y"]
+font = ExtResource("3_o5s6p")
+
 [node name="Game" type="Node2D" node_paths=PackedStringArray("planets", "basic_planets")]
 script = ExtResource("1_84trf")
 max_points_trajectory = 2000
@@ -275,18 +364,22 @@ rings = Array[CompressedTexture2D]([ExtResource("2_22u2e"), ExtResource("3_kkr5q
 [node name="ExplosionSFX" type="AudioStreamPlayer2D" parent="Audio"]
 position = Vector2(131, 381)
 stream = ExtResource("6_c2h7i")
+bus = &"SFX"
 
 [node name="LaunchSFX" type="AudioStreamPlayer2D" parent="Audio"]
 position = Vector2(131, 381)
 stream = ExtResource("7_v0rkt")
+bus = &"SFX"
 
 [node name="ButtonSFX" type="AudioStreamPlayer2D" parent="Audio"]
 position = Vector2(131, 381)
 stream = ExtResource("8_y41rn")
+bus = &"SFX"
 
 [node name="ThrustSFX" type="AudioStreamPlayer2D" parent="Audio"]
 position = Vector2(131, 381)
 stream = ExtResource("9_6bqc8")
+bus = &"SFX"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(250, 250)
@@ -460,7 +553,6 @@ metadata/_edit_use_anchors_ = true
 visible = false
 
 [node name="crashed" type="Label" parent="UI"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -483,7 +575,7 @@ text = "Velocity: 123 mi/s
 Angle: 0°
 Apoapsis: 500mi
 Periapsis:50mi"
-label_settings = SubResource("LabelSettings_7nod0")
+label_settings = SubResource("LabelSettings_xv0r0")
 metadata/_edit_use_anchors_ = true
 
 [node name="rightstats" type="Label" parent="UI"]
@@ -492,24 +584,35 @@ offset_right = 500.0
 offset_bottom = 433.0
 text = "planet mass: big
 planet gravity: yes"
-label_settings = SubResource("LabelSettings_7nod0")
+label_settings = SubResource("LabelSettings_xv0r0")
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="RestartButton" type="Button" parent="UI"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = 72.0
-offset_right = 59.0
-offset_bottom = 106.0
+offset_left = -51.0
+offset_top = 41.0
+offset_right = 169.0
+offset_bottom = 96.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.521333, 0.521333)
+theme = ExtResource("27_0uk8k")
 text = "Restart"
+
+[node name="pause" type="Label" parent="UI"]
+visible = false
+offset_left = 200.0
+offset_top = 239.0
+offset_right = 296.0
+offset_bottom = 262.0
+text = "PAUSED"
+label_settings = SubResource("LabelSettings_xv0r0")
+horizontal_alignment = 1
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
 script = ExtResource("26_31o22")
@@ -541,11 +644,20 @@ scale = Vector2(0.745, 0.745)
 theme = ExtResource("27_0uk8k")
 text = "SETTINGS"
 
+[node name="CreditsButton" type="Button" parent="MainMenu"]
+offset_left = 358.0
+offset_top = 310.0
+offset_right = 531.175
+offset_bottom = 344.0
+scale = Vector2(0.745, 0.745)
+theme = ExtResource("27_0uk8k")
+text = "CREDITS"
+
 [node name="QuitButton" type="Button" parent="MainMenu"]
 offset_left = 358.0
-offset_top = 309.0
+offset_top = 342.0
 offset_right = 531.175
-offset_bottom = 343.0
+offset_bottom = 376.0
 scale = Vector2(0.745, 0.745)
 theme = ExtResource("27_0uk8k")
 text = "QUIT"
@@ -569,11 +681,114 @@ libraries = {
 "": SubResource("AnimationLibrary_iwfdt")
 }
 
+[node name="UI" type="AnimationPlayer" parent="MainMenu"]
+libraries = {
+"": SubResource("AnimationLibrary_oddsr")
+}
+
+[node name="Settings" type="Sprite2D" parent="MainMenu"]
+visible = false
+position = Vector2(250, 250)
+scale = Vector2(1, 1e-05)
+texture = ExtResource("35_t6kv5")
+
+[node name="Label" type="Label" parent="MainMenu/Settings"]
+offset_left = -33.0
+offset_top = -103.0
+offset_right = 91.0
+offset_bottom = -80.0
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_xv0r0")
+
+[node name="music" type="HSlider" parent="MainMenu/Settings"]
+offset_left = -57.0
+offset_top = -45.0
+offset_right = 81.0
+offset_bottom = -29.0
+theme = ExtResource("36_lrekp")
+theme_override_styles/slider = SubResource("StyleBoxFlat_imqpb")
+min_value = -80.0
+max_value = 6.0
+
+[node name="Label" type="Label" parent="MainMenu/Settings/music"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -20.0
+offset_right = 139.0
+offset_bottom = 3.0
+text = "MUSIC"
+label_settings = SubResource("LabelSettings_xv0r0")
+horizontal_alignment = 1
+
+[node name="sfx" type="HSlider" parent="MainMenu/Settings"]
+offset_left = -69.0
+offset_top = 3.0
+offset_right = 69.0
+offset_bottom = 19.0
+theme = ExtResource("36_lrekp")
+theme_override_styles/slider = SubResource("StyleBoxFlat_imqpb")
+min_value = -80.0
+max_value = 6.0
+
+[node name="Label" type="Label" parent="MainMenu/Settings/sfx"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -20.0
+offset_right = 139.0
+offset_bottom = 3.0
+text = "SFX"
+label_settings = SubResource("LabelSettings_xv0r0")
+horizontal_alignment = 1
+
+[node name="intructions" type="Label" parent="MainMenu"]
+offset_left = 256.0
+offset_top = 438.0
+offset_right = 444.0
+offset_bottom = 473.0
+text = "A + D to steer
+Esc to pause"
+label_settings = SubResource("LabelSettings_hskdb")
+horizontal_alignment = 1
+
+[node name="Credits" type="Sprite2D" parent="MainMenu"]
+visible = false
+position = Vector2(250, 250)
+scale = Vector2(1, 1e-05)
+texture = ExtResource("35_t6kv5")
+
+[node name="Label" type="Label" parent="MainMenu/Credits"]
+offset_left = -33.0
+offset_top = -103.0
+offset_right = 91.0
+offset_bottom = -80.0
+text = "CREDITS"
+label_settings = SubResource("LabelSettings_xv0r0")
+horizontal_alignment = 1
+
+[node name="lines" type="Node2D" parent="MainMenu/Credits"]
+
+[node name="credits" type="Label" parent="MainMenu/Credits/lines"]
+offset_left = -55.0
+offset_top = -68.0
+offset_right = 399.0
+offset_bottom = -51.0
+scale = Vector2(0.328088, 0.328088)
+text = "PROGRAMMING -"
+label_settings = SubResource("LabelSettings_3di6y")
+autowrap_mode = 3
+
 [connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="pressed" from="UI/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UI/RestartButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MainMenu/SettingButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MainMenu/SettingButton" to="MainMenu" method="_on_setting_button_pressed"]
+[connection signal="pressed" from="MainMenu/CreditsButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MainMenu/CreditsButton" to="MainMenu" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MainMenu/QuitButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MainMenu/QuitButton" to="MainMenu" method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="MainMenu/Settings/music" to="MainMenu" method="_on_music_value_changed"]
+[connection signal="value_changed" from="MainMenu/Settings/sfx" to="MainMenu" method="_on_sfx_value_changed"]
 
 [editable path="Planets/Earth"]
 [editable path="Planets/Beta"]

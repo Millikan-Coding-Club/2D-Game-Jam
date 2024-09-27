@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://n4qhugdvhh4g"]
+
+[ext_resource type="Texture2D" uid="uid://ucv50aky2u5n" path="res://sprites/ui/barthing.png" id="1_k8nh0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imqpb"]
+bg_color = Color(1, 1, 1, 1)
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+
+[resource]
+HSlider/constants/center_grabber = 0
+HSlider/constants/grabber_offset = 0
+HSlider/icons/grabber = ExtResource("1_k8nh0")
+HSlider/icons/grabber_disabled = ExtResource("1_k8nh0")
+HSlider/icons/grabber_highlight = ExtResource("1_k8nh0")
+HSlider/icons/tick = ExtResource("1_k8nh0")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_imqpb")
+HSlider/styles/grabber_area_highlight = null
+HSlider/styles/slider = null

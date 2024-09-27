@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://bdop6xmbct6kq"]
 
 [ext_resource type="FontFile" uid="uid://c1b2i7caywvgb" path="res://PixelOperator8-Bold.ttf" id="1_xdv6a"]
-[ext_resource type="Texture2D" uid="uid://cbxj5eqnk3uf5" path="res://sprites/button.png" id="2_m0al5"]
+[ext_resource type="Texture2D" uid="uid://cbxj5eqnk3uf5" path="res://sprites/ui/button.png" id="2_m0al5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6m3md"]
 
@@ -34,7 +34,7 @@ Button/constants/align_to_largest_stylebox = 0
 Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
-Button/font_sizes/font_size = 8
+Button/font_sizes/font_size = 12
 Button/fonts/font = ExtResource("1_xdv6a")
 Button/styles/disabled = SubResource("StyleBoxEmpty_6m3md")
 Button/styles/focus = SubResource("StyleBoxEmpty_3co73")

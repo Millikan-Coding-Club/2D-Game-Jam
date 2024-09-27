@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcr4flgsorl6w"
-path="res://.godot/imported/menu-background.png-d734aba510b69c8a952fec4635423cc1.ctex"
+uid="uid://ucv50aky2u5n"
+path="res://.godot/imported/barthing.png-56d585b4bbb81779acbf6fa16a68e3d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/menu-background.png"
-dest_files=["res://.godot/imported/menu-background.png-d734aba510b69c8a952fec4635423cc1.ctex"]
+source_file="res://sprites/ui/barthing.png"
+dest_files=["res://.godot/imported/barthing.png-56d585b4bbb81779acbf6fa16a68e3d1.ctex"]
 
 [params]
 

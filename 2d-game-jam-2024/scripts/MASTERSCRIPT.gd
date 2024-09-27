@@ -25,7 +25,7 @@ var planets_copy: Array[Node2D] = []
 @onready var launch_sfx: AudioStreamPlayer2D = $Audio/LaunchSFX
 @onready var button_sfx: AudioStreamPlayer2D = $Audio/ButtonSFX
 @onready var thrust_sfx: AudioStreamPlayer2D = $Audio/ThrustSFX
-
+@onready var pause = $UI/pause
 
 var periapsis
 var passed_periapsis := false
@@ -178,7 +178,16 @@ func _input(event):
 		get_tree().reload_current_scene()
 	if Input.is_key_pressed(KEY_C):
 		GlobalVariables.debug = !GlobalVariables.debug
-		
+	if Input.is_key_pressed(KEY_ESCAPE):
+		if menu == false:
+			if pause.visible == false:
+				player.set_deferred("freeze", true)
+				$UI/pause.show()
+				button_sfx.play()
+			else:
+				player.set_deferred("freeze", false)
+				$UI/pause.hide()
+				button_sfx.play()
 		
 func _physics_process(delta: float) -> void:
 	if menu == false:
