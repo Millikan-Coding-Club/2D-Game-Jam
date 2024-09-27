@@ -4,6 +4,7 @@ var player: RigidBody2D
 var trajectory: Line2D
 @onready var explosion: AnimatedSprite2D = $Explosion
 @onready var planet: Node2D = $Planets/Earth
+@onready var main_menu = $MainMenu
 @export var max_points_trajectory: int = 300
 @export var trajectory_dot_interval: int = 10
 @export var trajectory_dot_size: float = 1
@@ -27,7 +28,7 @@ var speed
 var planet_spin
 var surface
 var max_speed = 0
-
+var menu = true
 
 func _ready() -> void:
 	start()
@@ -174,23 +175,25 @@ func _input(event):
 		
 		
 func _physics_process(delta: float) -> void:
-	if player.position.distance_to(planet.position) < planet.radius:
-		player.apply_force(calculate_gravity(player.position))
+	if menu == false:
+		if player.position.distance_to(planet.position) < planet.radius:
+			player.apply_force(calculate_gravity(player.position))
 	
 
 func _process(delta: float) -> void:
-	update_trajectory(max_points_trajectory, delta)
-	update_camera()
-	speed = round(player.linear_velocity.length())
-	if speed > max_speed:
-		max_speed = speed
-	update_ui()
-	planet.rotate(planet_spin * delta)
-	# Stops planet from slowing ship back down for slingshot effect
-	if !passed_periapsis:
-		passed_periapsis = round(player.position.distance_to(planet.position)) > periapsis
-	else:
-		planet.gravity_strength = planet.starting_gravity * 0.75
+	if menu == false:
+		update_trajectory(max_points_trajectory, delta)
+		update_camera()
+		speed = round(player.linear_velocity.length())
+		if speed > max_speed:
+			max_speed = speed
+		update_ui()
+		planet.rotate(planet_spin * delta)
+		# Stops planet from slowing ship back down for slingshot effect
+		if !passed_periapsis:
+			passed_periapsis = round(player.position.distance_to(planet.position)) > periapsis
+		else:
+			planet.gravity_strength = planet.starting_gravity * 0.75
 
 var text = "Speed: %s mi/s
 	Angle: %s °

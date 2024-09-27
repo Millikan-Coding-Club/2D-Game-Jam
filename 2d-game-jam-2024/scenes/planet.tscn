@@ -10,6 +10,7 @@
 radius = 207.0
 
 [node name="Planet" type="Node2D"]
+visible = false
 script = ExtResource("1_1wwfm")
 starting_gravity = 750
 radius = 200
