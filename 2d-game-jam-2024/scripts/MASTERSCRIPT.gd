@@ -174,10 +174,12 @@ func _input(event):
 		if menu == false:
 			if pause.visible == false:
 				Engine.time_scale = 0
+				AudioServer.set_bus_mute(1, true)
 				$UI/pause.show()
 				button_sfx.play()
 			else:
 				Engine.time_scale = 1
+				AudioServer.set_bus_mute(1, false)
 				$UI/pause.hide()
 				button_sfx.play()
 		
@@ -205,13 +207,18 @@ var text = "Speed: %s mi/s
 	Angle: %s °
 	Periapsis: %s mi"
 
+var score = 0
 func update_ui():
 	if round(player.position.distance_to(planet.position)) < periapsis:
 		periapsis = round(player.position.distance_to(planet.position))
 	if speed != 0:
+		if speed > score:
+			score = speed
+			$UI/Score.text = "SCORE
+			" + str(round(speed))
 		$UI/leftstats.text = text % [str(round(speed)), 
-	str(round(player.rotation_degrees + 180)),
-	periapsis]
+		str(round(player.rotation_degrees + 180)),
+		periapsis]
 	$UI/rightstats.visible = GlobalVariables.debug
 	$UI/rightstats.text = str(Engine.get_frames_per_second())
 
@@ -253,7 +260,7 @@ func _on_button_pressed(): #some weird error with this
 func start_music():
 	$Audio/Music/Phase1.play()
 	await $Audio/Music/Phase1.finished
-	while speed < 200:
+	while score < 200:
 		print("speed")
 		$Audio/Music/Loop1.play()
 		await $Audio/Music/Loop1.finished
@@ -261,6 +268,6 @@ func start_music():
 	await get_tree().create_timer(3.75).timeout
 	$Audio/Music/Phase2.play()
 	await $Audio/Music/Phase2.finished
-	while speed < 400:
+	while score < 400:
 		$Audio/Music/Loop2.play()
 		await $Audio/Music/Loop2.finished
