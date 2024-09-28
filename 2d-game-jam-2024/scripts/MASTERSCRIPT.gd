@@ -5,6 +5,8 @@ var trajectory: Line2D
 @onready var explosion: AnimatedSprite2D = $Explosion
 @onready var planet: Node2D = $Planets/Earth
 @onready var main_menu = $MainMenu
+
+@export var skip_intro = false
 @export var max_points_trajectory: int = 300
 @export var trajectory_dot_interval: int = 10
 @export var trajectory_dot_size: float = 1

@@ -11,24 +11,27 @@ extends CanvasLayer
 
 
 func _ready():
-	anim.play("orbit")
-	game.menu = true
-	ui.hide()
-	await start_button.pressed
-	$"../Audio/LaunchSFX".play()
-	$Title.hide()
-	$StartButton.hide()
-	$SettingButton.hide()
-	$QuitButton.hide()
-	$CreditsButton.hide()
-	$Settings.hide()
-	$Credits.hide()
-	$intructions.hide()
-	game.start_music()
-	anim.stop()
-	anim.play("launch")
-	launch_sfx.play()
-	await anim.animation_finished
+	if game.skip_intro == false:
+		anim.play("orbit")
+		game.menu = true
+		ui.hide()
+		await start_button.pressed
+		$"../Audio/LaunchSFX".play()
+		$Title.hide()
+		$StartButton.hide()
+		$SettingButton.hide()
+		$QuitButton.hide()
+		$CreditsButton.hide()
+		$Settings.hide()
+		$Credits.hide()
+		$intructions.hide()
+		game.start_music()
+		anim.stop()
+		anim.play("launch")
+		launch_sfx.play()
+		await anim.animation_finished
+	else:
+		await get_tree().create_timer(.05).timeout
 	ui.show()
 	hide()
 	game.menu = false

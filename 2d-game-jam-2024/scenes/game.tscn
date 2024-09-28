@@ -492,6 +492,7 @@ font = ExtResource("3_o5s6p")
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("planets", "basic_planets")]
 script = ExtResource("1_84trf")
+skip_intro = true
 max_points_trajectory = 2000
 trajectory_dot_size = 1.2
 min_planet_spin = 0.1
