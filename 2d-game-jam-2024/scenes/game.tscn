@@ -801,7 +801,6 @@ label_settings = SubResource("LabelSettings_xv0r0")
 horizontal_alignment = 1
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("26_31o22")
 
 [node name="Background" type="Sprite2D" parent="MainMenu"]

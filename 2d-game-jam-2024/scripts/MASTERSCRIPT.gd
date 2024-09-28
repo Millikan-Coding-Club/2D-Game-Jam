@@ -260,14 +260,15 @@ func _on_button_pressed(): #some weird error with this
 func start_music():
 	$Audio/Music/Phase1.play()
 	await $Audio/Music/Phase1.finished
+	$Audio/Music/Loop1.play()
 	while score < 200:
-		print("speed")
-		$Audio/Music/Loop1.play()
-		await $Audio/Music/Loop1.finished
+		await get_tree().create_timer(7.5).timeout
+	$Audio/Music/Loop1.stop()
 	$Audio/Music/Transition1.play()
 	await get_tree().create_timer(3.75).timeout
 	$Audio/Music/Phase2.play()
 	await $Audio/Music/Phase2.finished
+	$Audio/Music/Loop2.play()
 	while score < 400:
-		$Audio/Music/Loop2.play()
-		await $Audio/Music/Loop2.finished
+		await get_tree().create_timer(7.5).timeout
+	$Audio/Music/Loop2.stop()
