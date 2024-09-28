@@ -14,6 +14,7 @@ func _ready():
 	game.menu = true
 	ui.hide()
 	await start_button.pressed
+	$"../Audio/LaunchSFX".play()
 	$Title.hide()
 	$StartButton.hide()
 	$SettingButton.hide()
@@ -22,6 +23,7 @@ func _ready():
 	$Settings.hide()
 	$Credits.hide()
 	$intructions.hide()
+	game.start_music()
 	anim.stop()
 	anim.play("launch")
 	await anim.animation_finished

@@ -29,6 +29,7 @@ torque = 200
 [node name="ThrustSFX" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(131, 381)
 stream = ExtResource("2_7u1dv")
+pitch_scale = 0.5
 bus = &"SFX"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

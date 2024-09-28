@@ -112,15 +112,13 @@ func create_player():
 	player.connect("game_over", game_over)
 	player.get_node("Sprite2D/VisibleOnScreenNotifier2D").connect("screen_exited", _on_player_exited)
 
-
 func calculate_gravity(point: Vector2):
 	var distance = planet.position.distance_to(point)
 	var direction = (planet.position - point).normalized()
 	var magnitude = planet.gravity_strength * 100000 / pow(distance, 2)
 	var force = direction * magnitude # OH YEAH
 	return force
-		
-		
+
 func update_trajectory(steps, delta):
 	var pos = player.position
 	var vel = player.linear_velocity
@@ -166,7 +164,6 @@ func _draw():
 		draw_circle(i, size, Color(1, 1, 1))
 	circle_locations.clear()
 
-
 func _input(event):
 	#restart key
 	if Input.is_key_pressed(KEY_R):
@@ -188,7 +185,6 @@ func _physics_process(delta: float) -> void:
 	if menu == false:
 		if player.position.distance_to(planet.position) < planet.radius:
 			player.apply_force(calculate_gravity(player.position))
-	
 
 func _process(delta: float) -> void:
 	if menu == false:
@@ -208,7 +204,7 @@ func _process(delta: float) -> void:
 var text = "Speed: %s mi/s
 	Angle: %s °
 	Periapsis: %s mi"
-	
+
 func update_ui():
 	if round(player.position.distance_to(planet.position)) < periapsis:
 		periapsis = round(player.position.distance_to(planet.position))
@@ -221,6 +217,7 @@ func update_ui():
 
 func game_over():
 	explode()
+	$Audio/Music/Death.play("death")
 	player.set_deferred("freeze", true)
 	player.hide()
 	$UI/crashed.show()
@@ -228,8 +225,12 @@ func game_over():
 	$UI/leftstats.text = text % ["0", "0", "0"]
 	$UI/crashed.text = "YOU CRASHED\nScore: " + str(speed)
 
-
 func explode():
+	
+	
+	#this works better dude
+	explosion.reparent(planet)
+	explosion.global_position = player.global_position
 	var offset = (player.position - planet.position).normalized() * (surface + explosion_dist_offset)
 	explosion.position = planet.position + offset
 	explosion.look_at(planet.position)
@@ -241,11 +242,25 @@ func explode():
 	await explosion.animation_finished
 	explosion.hide()
 
-
 func _on_player_exited() -> void:
 	if player.visible:
 		new_vel = speed
 		restart()
 
-func _on_button_pressed():
+func _on_button_pressed(): #some weird error with this
 	button_sfx.play()
+
+func start_music():
+	$Audio/Music/Phase1.play()
+	await $Audio/Music/Phase1.finished
+	while speed < 200:
+		print("speed")
+		$Audio/Music/Loop1.play()
+		await $Audio/Music/Loop1.finished
+	$Audio/Music/Transition1.play()
+	await get_tree().create_timer(3.75).timeout
+	$Audio/Music/Phase2.play()
+	await $Audio/Music/Phase2.finished
+	while speed < 400:
+		$Audio/Music/Loop2.play()
+		await $Audio/Music/Loop2.finished

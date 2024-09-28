@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://bvypuuq4xfckn"]
+[gd_scene load_steps=74 format=3 uid="uid://bvypuuq4xfckn"]
 
 [ext_resource type="Script" path="res://scripts/MASTERSCRIPT.gd" id="1_84trf"]
 [ext_resource type="Texture2D" uid="uid://dcl66usflbpa2" path="res://sprites/planets/beta.png" id="2_7c22e"]
@@ -18,11 +18,16 @@
 [ext_resource type="AudioStream" uid="uid://c866socepeoh5" path="res://Audio/SFX/launch.wav" id="7_v0rkt"]
 [ext_resource type="Texture2D" uid="uid://cbgo4taom0nk1" path="res://sprites/planets/ice planet2.png" id="8_nb4nc"]
 [ext_resource type="AudioStream" uid="uid://hxssj4md6fy" path="res://Audio/SFX/button.wav" id="8_y41rn"]
+[ext_resource type="AudioStream" uid="uid://c4f1xbu05rvff" path="res://Audio/Music/loop1.wav" id="9_1e88k"]
 [ext_resource type="Texture2D" uid="uid://prgfspes0tu4" path="res://sprites/planets/mound.png" id="9_idkrv"]
+[ext_resource type="AudioStream" uid="uid://bvkd68q2dphqj" path="res://Audio/Music/phase1.wav" id="9_kyuxy"]
+[ext_resource type="AudioStream" uid="uid://bcned6713adhn" path="res://Audio/Music/transition1.wav" id="10_arjlb"]
 [ext_resource type="Texture2D" uid="uid://ra37ap6mdgoy" path="res://sprites/planets/oceanplanet.png" id="10_sa7fl"]
+[ext_resource type="AudioStream" uid="uid://b6xooub3ivqxu" path="res://Audio/Music/loop2.wav" id="11_bnnt8"]
 [ext_resource type="Texture2D" uid="uid://bqan1pk6wt1xh" path="res://sprites/planets/pinky.png" id="11_v2rp4"]
 [ext_resource type="Texture2D" uid="uid://da2eabypwe6c7" path="res://sprites/explosion.png" id="12_nq0hm"]
 [ext_resource type="Texture2D" uid="uid://dpus0ldv7e260" path="res://sprites/planets/sigma.png" id="12_q08yf"]
+[ext_resource type="AudioStream" uid="uid://bb24b4gqhx7mg" path="res://Audio/Music/phase2.wav" id="12_rsi76"]
 [ext_resource type="Texture2D" uid="uid://c3ev3xce45s3b" path="res://sprites/planets/steve.png" id="13_n160u"]
 [ext_resource type="Texture2D" uid="uid://b1we8hplevbd5" path="res://sprites/planets/steve2.png" id="14_sgb3s"]
 [ext_resource type="Texture2D" uid="uid://bxavnvug8h0xk" path="res://sprites/planets/thanos.png" id="15_uc0y6"]
@@ -35,6 +40,139 @@
 [ext_resource type="Texture2D" uid="uid://dgkc6tis1axby" path="res://sprites/ship.png" id="30_ccily"]
 [ext_resource type="Texture2D" uid="uid://xi5bjeqxucnr" path="res://sprites/ui/settings.png" id="35_t6kv5"]
 [ext_resource type="Theme" uid="uid://n4qhugdvhh4g" path="res://themes/barthing.tres" id="36_lrekp"]
+
+[sub_resource type="Animation" id="Animation_lmfvx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Phase1:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Loop1:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Transition1:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Phase2:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Loop2:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_s0f80"]
+resource_name = "death"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Phase1:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Loop1:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Transition1:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [20.0, -80.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Phase2:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Loop2:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3g8l2"]
+_data = {
+"RESET": SubResource("Animation_lmfvx"),
+"death": SubResource("Animation_s0f80")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vaotb"]
 atlas = ExtResource("12_nq0hm")
@@ -368,12 +506,40 @@ bus = &"SFX"
 [node name="LaunchSFX" type="AudioStreamPlayer2D" parent="Audio"]
 position = Vector2(131, 381)
 stream = ExtResource("7_v0rkt")
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="ButtonSFX" type="AudioStreamPlayer2D" parent="Audio"]
 position = Vector2(131, 381)
 stream = ExtResource("8_y41rn")
 bus = &"SFX"
+
+[node name="Music" type="Node2D" parent="Audio"]
+
+[node name="Phase1" type="AudioStreamPlayer2D" parent="Audio/Music"]
+stream = ExtResource("9_kyuxy")
+bus = &"Music"
+
+[node name="Loop1" type="AudioStreamPlayer2D" parent="Audio/Music"]
+stream = ExtResource("9_1e88k")
+bus = &"Music"
+
+[node name="Transition1" type="AudioStreamPlayer2D" parent="Audio/Music"]
+stream = ExtResource("10_arjlb")
+bus = &"Music"
+
+[node name="Phase2" type="AudioStreamPlayer2D" parent="Audio/Music"]
+stream = ExtResource("12_rsi76")
+bus = &"Music"
+
+[node name="Loop2" type="AudioStreamPlayer2D" parent="Audio/Music"]
+stream = ExtResource("11_bnnt8")
+bus = &"Music"
+
+[node name="Death" type="AnimationPlayer" parent="Audio/Music"]
+libraries = {
+"": SubResource("AnimationLibrary_3g8l2")
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(250, 250)
@@ -775,8 +941,8 @@ label_settings = SubResource("LabelSettings_3di6y")
 autowrap_mode = 3
 
 [connection signal="draw" from="." to="." method="_on_draw"]
-[connection signal="pressed" from="UI/RestartButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="UI/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UI/RestartButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MainMenu/SettingButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MainMenu/SettingButton" to="MainMenu" method="_on_setting_button_pressed"]
