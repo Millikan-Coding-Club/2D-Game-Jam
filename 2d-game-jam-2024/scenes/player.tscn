@@ -22,7 +22,7 @@ physics_material_override = SubResource("PhysicsMaterial_gi4ek")
 script = ExtResource("1_gba11")
 max_points_trail = 50
 const_thrust = 0
-sideways_thrust = 10000.0
+sideways_thrust = 7000.0
 spawn_dist = 360.0
 torque = 200
 

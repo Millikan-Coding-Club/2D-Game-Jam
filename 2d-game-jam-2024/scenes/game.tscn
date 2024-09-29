@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://bvypuuq4xfckn"]
+[gd_scene load_steps=78 format=3 uid="uid://bvypuuq4xfckn"]
 
 [ext_resource type="Script" path="res://scripts/MASTERSCRIPT.gd" id="1_84trf"]
 [ext_resource type="Texture2D" uid="uid://dcl66usflbpa2" path="res://sprites/planets/beta.png" id="2_7c22e"]
@@ -29,8 +29,10 @@
 [ext_resource type="Texture2D" uid="uid://dpus0ldv7e260" path="res://sprites/planets/sigma.png" id="12_q08yf"]
 [ext_resource type="AudioStream" uid="uid://bb24b4gqhx7mg" path="res://Audio/Music/phase2.wav" id="12_rsi76"]
 [ext_resource type="Texture2D" uid="uid://c3ev3xce45s3b" path="res://sprites/planets/steve.png" id="13_n160u"]
+[ext_resource type="AudioStream" uid="uid://rmr814ir3ou2" path="res://Audio/Music/finalphase.wav" id="14_8247j"]
 [ext_resource type="Texture2D" uid="uid://b1we8hplevbd5" path="res://sprites/planets/steve2.png" id="14_sgb3s"]
 [ext_resource type="Texture2D" uid="uid://bxavnvug8h0xk" path="res://sprites/planets/thanos.png" id="15_uc0y6"]
+[ext_resource type="AudioStream" uid="uid://b7p4p02mo32sv" path="res://Audio/Music/loop3.wav" id="15_vquqk"]
 [ext_resource type="Texture2D" uid="uid://m6b48gtnr16f" path="res://sprites/planets/basic2.png" id="17_cwv7j"]
 [ext_resource type="Texture2D" uid="uid://bxxfxips3hx7y" path="res://sprites/planets/basic3.png" id="18_smwf5"]
 [ext_resource type="Texture2D" uid="uid://dl12g0a43yjwi" path="res://sprites/planets/mother.png" id="21_d7qff"]
@@ -44,6 +46,7 @@
 
 [sub_resource type="Animation" id="Animation_lmfvx"]
 length = 0.001
+step = 0.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -99,6 +102,30 @@ tracks/4/path = NodePath("Loop2:volume_db")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("FinalPhase:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Loop3:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -163,6 +190,30 @@ tracks/4/path = NodePath("Loop2:volume_db")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("FinalPhase:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Loop3:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -503,6 +554,7 @@ cool_planet_chance = 0.4
 planets = [NodePath("Planets/Beta"), NodePath("Planets/Cheese"), NodePath("Planets/Evil Earth"), NodePath("Planets/Graveyard"), NodePath("Planets/Ice Planet 1"), NodePath("Planets/Ice Planet 2"), NodePath("Planets/Mound"), NodePath("Planets/Ocean Planet"), NodePath("Planets/Pinky"), NodePath("Planets/Sigma"), NodePath("Planets/Steve-A"), NodePath("Planets/Steve-K"), NodePath("Planets/Thanos"), NodePath("Planets/Mother")]
 basic_planets = [NodePath("Basic Planets/Basic1"), NodePath("Basic Planets/Basic2"), NodePath("Basic Planets/Basic3")]
 rings = Array[CompressedTexture2D]([ExtResource("2_22u2e"), ExtResource("3_kkr5q"), ExtResource("4_uq57e"), ExtResource("5_3mmkk")])
+max_speed = 200
 
 [node name="Audio" type="Node" parent="."]
 
@@ -542,6 +594,14 @@ bus = &"Music"
 
 [node name="Loop2" type="AudioStreamPlayer2D" parent="Audio/Music"]
 stream = ExtResource("11_bnnt8")
+bus = &"Music"
+
+[node name="FinalPhase" type="AudioStreamPlayer2D" parent="Audio/Music"]
+stream = ExtResource("14_8247j")
+bus = &"Music"
+
+[node name="Loop3" type="AudioStreamPlayer2D" parent="Audio/Music"]
+stream = ExtResource("15_vquqk")
 bus = &"Music"
 
 [node name="Death" type="AnimationPlayer" parent="Audio/Music"]

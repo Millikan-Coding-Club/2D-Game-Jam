@@ -97,7 +97,7 @@ func generate_planet():
 	planet.radius *= planet_scale
 	planet.rotation = randf_range(0, 2 * PI)
 	planet_spin = randf_range(min_planet_spin, max_planet_spin)
-	exit_scale = 0.5 + (speed - 50) / ((max_speed - 50) / 0.5)
+	exit_scale = min(0.5 + (speed - 50) / ((max_speed - 50) / 0.5), 1)
 	if randf() > 0.5:
 		planet_spin *= -1
 	# Enable planet
@@ -267,7 +267,7 @@ func start_music():
 	$Audio/Music/Phase1.play()
 	await $Audio/Music/Phase1.finished
 	$Audio/Music/Loop1.play()
-	while score < 200:
+	while score < 300:
 		await get_tree().create_timer(7.5).timeout
 	$Audio/Music/Loop1.stop()
 	$Audio/Music/Transition1.play()
@@ -275,6 +275,9 @@ func start_music():
 	$Audio/Music/Phase2.play()
 	await $Audio/Music/Phase2.finished
 	$Audio/Music/Loop2.play()
-	while score < 400:
+	while score < 1200:
 		await get_tree().create_timer(7.5).timeout
 	$Audio/Music/Loop2.stop()
+	$Audio/Music/FinalPhase.play()
+	await $Audio/Music/FinalPhase.finished
+	$Audio/Music/Loop3.play()
